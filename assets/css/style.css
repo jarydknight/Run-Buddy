@@ -8,11 +8,19 @@
 
 }
 
+:root {
+
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+
+}
+
 body {
     
     font-family: Helvetica, Arial, sans-serif;
 
-    color: #39a6b2
+    color: var(--tertiary-color);
 
 }
 
@@ -22,7 +30,7 @@ header {
     
     padding: 20px 35px;
 
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
 
     display: flex;
 
@@ -43,6 +51,8 @@ header {
     background-position: 80%;
 
     background-attachment: fixed;
+
+    z-index: 9999;
 }
 
 header h1 {
@@ -51,7 +61,7 @@ header h1 {
 
     font-size: 36px;
 
-    color: #fce138;
+    color: var(--primary-color);
 
     margin: 0;
 
@@ -63,7 +73,7 @@ header a {
     
     text-decoration: none;
 
-    color: #fce138;
+    color: var(--primary-color);
 
 }
 
@@ -99,9 +109,9 @@ header nav ul li a {
 
 header nav ul li a:hover {
 
-    background: #fce138;
+    background: var(--primary-color);
 
-    color: #024e76;
+    color: var(--secondary-color);
 
     border-radius: 15px;
 
@@ -116,7 +126,7 @@ footer {
 
     flex-wrap: wrap;
     
-    background: #fce138;
+    background: var(--primary-color);
 
     width: 100%;
 
@@ -126,7 +136,7 @@ footer {
 
 footer h2 {
 
-    color: #024e76;
+    color: var(--secondary-color);
 
     font-size: 30px;
 
@@ -144,7 +154,7 @@ footer div {
 
 footer a {
 
-    color: #024e76;
+    color: var(--secondary-color);
 
 }
 
@@ -197,7 +207,7 @@ section {
 
     font-size: 55px;
 
-    color: #fce138;
+    color: var(--primary-color);
 
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
@@ -205,13 +215,13 @@ section {
 
 .hero-form {
 
-    color: #024e76;
+    color: var(--secondary-color);
 
     background-color: rgba(252,225,56,0.8);
 
     padding: 20px;
 
-    border: solid 3px #024e76;
+    border: solid 3px var(--secondary-color);
 
     width: 40%;
 
@@ -239,7 +249,7 @@ margin: 5px 0 15px 0;
 
 .form-input {
 
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
 
     display: block;
 
@@ -247,7 +257,7 @@ margin: 5px 0 15px 0;
 
     font-size: 16px;
 
-    color: #024e76;
+    color: var(--secondary-color);
 
     width: 100%;
 
@@ -272,14 +282,14 @@ margin: 5px 0 15px 0;
 
 .hero-form button:hover {
 
-    background-color: #39a6b2;  
+    background-color: var(--tertiary-color);  
   }
 
 .hero-form button {
 
-    background-color: #024e76;
+    background-color: var(--secondary-color);
     
-    color: #fce138;
+    color: var(--primary-color);
 
     padding: 10px 20px;
 
@@ -289,11 +299,103 @@ margin: 5px 0 15px 0;
 
 }
 
+.checkbox-wrapper input, .radio-wrapper input {
+    
+    opacity: 0;
+  }
+
+  .checkbox-wrapper label, .radio-wrapper label {
+    
+    position: relative;
+
+    left: 10px;
+
+    margin: 10px;
+
+    line-height: 1.6;
+  }
+
+  .checkbox-wrapper label::before, .radio-wrapper label::before {
+    
+    content: "";
+
+    height: 20px;
+
+    width: 20px;
+
+    background: rgba(255, 255, 255, 0.75); 
+
+    border: 1px solid var(--secondary-color); 
+
+    position: absolute;
+
+    top: -4px;
+
+    left: -30px;
+  }
+
+  .radio-wrapper label::before {
+    
+    border-radius: 50%;
+  }
+
+  .radio-wrapper label::after {
+    
+    content: "";
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: var(--secondary-color);
+
+    position: absolute;
+
+    left: -29px;
+
+    top: -3px;
+
+    background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color));
+  }
+  
+  .checkbox-wrapper label::after {
+    
+    content: "";
+
+    height: 6px;
+
+    width: 14px;
+
+    border-left: 2px solid var(--secondary-color);
+
+    border-bottom: 2px solid var(--secondary-color);
+
+    position: absolute;
+
+    left: -26px;
+
+    top: 1px;
+
+    transform: rotate(-58deg);
+  }
+
+  .checkbox-wrapper input + label::after, .radio-wrapper input + label::after {
+    
+    content: none;
+  }
+  
+  .checkbox-wrapper input:checked + label::after, .radio-wrapper input:checked + label::after {
+    
+    content: "";
+  }
+
 .intro p {
 
     line-height: 1.7;
 
-    color: #39a6b2;
+    color: var(--tertiary-color);
 
     width: 80%;
 
@@ -325,12 +427,12 @@ margin: 5px 0 15px 0;
 
 .step:not(:last-child) {
 
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid var(--tertiary-color);
   }
 
 .steps {
 
-    background-color: #fce138;
+    background-color: var(--primary-color);
 
 }
 
@@ -368,7 +470,7 @@ step-img img {
 
 .step h3 {
 
-    color: #024e76;
+    color: var(--secondary-color);
 
     font-size: 46px;
 
@@ -382,13 +484,13 @@ step-img img {
 
     line-height: 1.5;
 
-    color: #024e76;
+    color: var(--secondary-color);
 
 }
 
 .step-text p {
 
-    color: #39a6b2;
+    color: var(--tertiary-color);
 
     font-size: 18px;
 
@@ -406,7 +508,7 @@ step-img img {
 
     font-size: 48px;
 
-    color: #024e76;
+    color: var(--secondary-color);
 
     border-bottom:  3px solid;
 
@@ -414,13 +516,13 @@ step-img img {
 
 .primary-border{
 
-    border-color: #fce138;
+    border-color: var(--primary-color);
 
 }
 
 .secondary-border {
 
-    border-color: #39a6b2;
+    border-color: var(--tertiary-color);
 
 }
 
@@ -444,9 +546,9 @@ step-img img {
 
     margin: 20px;
 
-    background: #024e76;
+    background: var(--secondary-color);
 
-    color: #fce138;
+    color: var(--primary-color);
 
     flex: 1;
 
@@ -502,13 +604,13 @@ step-img img {
 
   .contact {
 
-    background: #024e76;
+    background: var(--secondary-color);
 
   }
 
   .contact h2 {
 
-    color: #fce138;
+    color: var(--primary-color);
 
   }
 
@@ -544,7 +646,7 @@ step-img img {
 
   .contact-info h3 {
 
-    color: #fce138;
+    color: var(--primary-color);
 
     font-size: 32px;
 
@@ -564,13 +666,13 @@ step-img img {
   
   .contact-info a {
 
-    color: #fce138;
+    color: var(--primary-color);
     
   }
 
   .contact-form input, .contact-form textarea {
 
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
 
     display: block;
 
@@ -578,7 +680,7 @@ step-img img {
 
     font-size: 16px;
 
-    color: #024e76;
+    color: var(--secondary-color);
 
     width: 100%;
 
@@ -605,7 +707,7 @@ step-img img {
 
     border: none;
 
-    background: #fce138;
+    background: var(--primary-color);
 
     text-align: center;
 
@@ -618,9 +720,9 @@ step-img img {
 
   .contact-form button:hover {
     
-    color: #fce138;
+    color: var(--primary-color);
 
-    background: #39a6b2;
+    background: var(--tertiary-color);
   }
 
 .flex-row {
